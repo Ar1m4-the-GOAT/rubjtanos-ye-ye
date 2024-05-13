@@ -1,0 +1,66 @@
+.cats{
+    font-size: 18px;
+    color: aliceblue;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    transition: padding-left 0.7s, font-weight 0.5s;
+}
+
+img{ height: 20px; }
+
+.menu{
+    /* display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-direction: column; */
+    max-height: 0;
+    overflow: hidden;
+    position:absolute;
+    width:fit-content;
+    height:max-content;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    top: 9%;
+    left:51%;
+    background-color: rgb(9, 39, 64);
+    padding-right:10px;
+    z-index: 10;
+}
+
+.element-menu {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.img-menu {
+    width: 30px;
+    height: 30px;
+}
+
+.cats:hover{
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+
+.animIn{
+    animation: 1s ease animationIn;
+    animation-delay: 0s;
+}
+
+.animOut{
+    animation: 0.4s ease animationOut;
+    animation-delay: 0s;
+}
+
+@keyframes animationIn {
+    from {max-height: 0%}
+    to {max-height: 100%}
+}
+
+@keyframes animationOut{
+    from {max-height: 100%}
+    to {max-height: 0%}
+}

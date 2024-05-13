@@ -1,0 +1,45 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: rgb(9, 39, 64);
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    width: 100%;
+    bottom: 0;
+    height: 200px;
+    columns: 1;
+  }
+  
+  hr{
+    width: 1300px;
+    border-color:aliceblue;
+  }
+  
+  .div-footer{
+    display: flex;
+    justify-content:space-between;
+  }
+  
+  .first-div-footer { padding-top: 25px; }
+  
+  .second-div-footer{ flex-direction: column; }
+  
+  .p-footer{
+    font-size: 0.85rem;
+    color: aliceblue;
+    text-decoration: none;
+    flex: 1;
+  }
+  
+  .p-highlight {
+    padding: 5px;
+    transition: padding-left 0.7s, font-weight 0.5s;
+  }
+  
+  .p-highlight:hover {
+    font-weight: bold;
+    padding-left: 10px;
+  }

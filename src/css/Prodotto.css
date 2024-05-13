@@ -1,0 +1,99 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.prodotto-scelto {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.border {
+    background-color: aliceblue;
+    border: 7px solid rgb(9, 39, 64);
+    outline: 4px solid rgb(9, 39, 64);
+    outline-offset: 3px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+}
+
+.div-img-prodotto-scelto {
+    align-items: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    overflow: hidden;
+}
+
+.img-prodotto-scelto{ width: 750px; height: 500px; }
+
+.div-caratteristiche-prodotto-scelto {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 450px;
+    height: 500px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.h-prodotto-scelto {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin: 0px;
+    color: orange;
+}
+
+.h1 { filter: drop-shadow(0 0 2px rgb(9, 39, 64)) drop-shadow(0 0 2px rgb(9, 39, 64)) drop-shadow(0 0 2px rgb(9, 39, 64)); }
+
+.h4 {
+    text-shadow: 
+    -1px -1px 0 rgba(9, 39, 64, 0.8),  
+     1px -1px 0 rgba(9, 39, 64, 0.8),  
+    -1px  1px 0 rgba(9, 39, 64, 0.8),  
+     1px  1px 0 rgba(9, 39, 64, 0.8)
+}
+
+.prezzo-prodotto-scelto {
+    width: fit-content;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 0;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(9, 39, 64);
+}
+
+.div-car-prod-scelto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.caratteristica-prodotto-scelto {
+    width: 80px;
+    margin: 5px;
+    margin-right: 15px;
+    padding: 5px;
+    margin-left: 0;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: rgb(9, 39, 64);
+}
+
+.caratteristica-prodotto-scelto:hover { transition: ease-out transform 0.3s; transform: scale(1.05); }
+.caratteristica-prodotto-scelto:not(:hover) { transition: ease-in transform 0.3s; transform: scale(1); }
+
+.agg-prodotto-scelto {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(9, 39, 64);
+    color: aliceblue; 
+}
