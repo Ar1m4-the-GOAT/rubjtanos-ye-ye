@@ -1,6 +1,8 @@
+import {CloseCategories} from "../components/Header.js";
+
 export default function Homepage() {
     return (
-    <div className="container">
+    <div className="container" onClick={CloseCategories}>
         <p className="overlay">
             <font style={{fontSize:"50px", letterSpacing:"7px"}} color={'white'}>
                 <font style={{fontSize:"100px"}}>
