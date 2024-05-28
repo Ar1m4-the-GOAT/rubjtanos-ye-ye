@@ -27,7 +27,7 @@ function OpenCategories(){
     }
 }
 
-function CloseCategories(){
+export function CloseCategories(){
     var menu = document.getElementById("menu");
     if(menu !== undefined){
         if(menu.classList.contains("animIn") === true) {
