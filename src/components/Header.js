@@ -16,6 +16,8 @@ function OptionBarButton({section, imgPath, link}){
 function OpenCategories(){
     var menu = document.getElementById("menu");
     if(menu !== undefined){
+        if(menu.classList.contains("closed-categories"))
+            menu.classList.remove("closed-categories");
         if(menu.classList.contains("animOut") === true) {
             menu.classList.remove("animOut");
             menu.classList.add("animIn");
@@ -38,6 +40,7 @@ export function CloseCategories(){
             menu.classList.add("animOut");
             menu.style.maxHeight='0%';
         }
+        menu.classList.add("closed-categories");
     }
 }
 
@@ -88,7 +91,7 @@ export default function Header(){
     <div className="option-bar">
         <OptionBarButton section={"HOME PAGE"} imgPath={"/home 1.png"} link={""}/>
 
-        <div className="menu" id="menu">
+        <div className="menu closed-categories" id="menu">
             {  
             categories?.map((x) => 
             <div key={x.name} className='element-menu'>
@@ -102,7 +105,7 @@ export default function Header(){
         <div className="option-bar-button" 
                 onClick={()=>{
                     setShowMenu(!showMenu);
-                    showMenu ? OpenCategories() : CloseCategories();
+                    showMenu ? CloseCategories() : OpenCategories();
                 }}>
             <img src="/categories.png" alt="" className="icon"/>
             CATEGORIE

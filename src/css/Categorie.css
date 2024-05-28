@@ -13,7 +13,6 @@ img{ height: 20px; }
     justify-content:flex-start;
     align-items: center;
     flex-direction: column; */
-    max-height: 0;
     overflow: hidden;
     position:absolute;
     width:fit-content;
@@ -25,6 +24,10 @@ img{ height: 20px; }
     background-color: rgb(9, 39, 64);
     padding-right:10px;
     z-index: 10;
+}
+
+.closed-categories{
+    max-height: 0%;
 }
 
 .element-menu {

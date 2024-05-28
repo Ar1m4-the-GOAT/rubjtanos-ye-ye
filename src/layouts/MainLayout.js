@@ -5,7 +5,7 @@ import {CloseCategories} from "../components/Header.js";
 
 export default function MainLayout(){
     return (
-        <div>
+        <div onClick={clickHandler}>
             <Header/>
         <div style={{minHeight:"80vh"}}>
             <Outlet/></div>
@@ -15,5 +15,7 @@ export default function MainLayout(){
 }
 
 function clickHandler(event) {
-    if (event.target.id !== "menu") CloseCategories();
+    // if (event.target !== "div.option-bar-button" && event.target !== "div.element-menu") CloseCategories();
+    // if(event.target.id !== "menu") CloseCategories();
+    console.log(event);
 }
