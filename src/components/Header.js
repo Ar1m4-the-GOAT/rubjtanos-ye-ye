@@ -91,7 +91,7 @@ export default function Header(){
         <div className="menu" id="menu">
             {  
             categories?.map((x) => 
-            <div className='element-menu'>
+            <div key={x.name} className='element-menu'>
                 <img src="/Triangolo.png" alt="triangolino" className='img-menu'></img>
                 <Link className="cats" to={"/Categorie/" + x.name}>{x.name}</Link><br/>
             </div>
@@ -100,10 +100,9 @@ export default function Header(){
         </div>
 
         <div className="option-bar-button" 
-                onClick=
-                {()=>{
+                onClick={()=>{
                     setShowMenu(!showMenu);
-                    showMenu ? CloseCategories() : OpenCategories();
+                    showMenu ? OpenCategories() : CloseCategories();
                 }}>
             <img src="/categories.png" alt="" className="icon"/>
             CATEGORIE

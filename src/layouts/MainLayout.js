@@ -5,11 +5,15 @@ import {CloseCategories} from "../components/Header.js";
 
 export default function MainLayout(){
     return (
-        <div onClick={CloseCategories}>
+        <div>
             <Header/>
         <div style={{minHeight:"80vh"}}>
             <Outlet/></div>
             <Footer/>
         </div>
     );
+}
+
+function clickHandler(event) {
+    if (event.target.id !== "menu") CloseCategories();
 }
