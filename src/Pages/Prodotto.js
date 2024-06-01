@@ -3,11 +3,13 @@ import {useEffect} from "react";
 import axios from "axios";
 import {useParams} from 'react-router-dom';
 import {CarrelloContext,CarrelloProvider} from "../components/CarrelloContext";
+import Header from "../components/Header";
+import {TotaleContext,TotaleProvider} from "../components/TotaleContext";
 
 function Caratteristiche({product}){
     const [title, setTitle] = useState("NO CARATTERISTICHE");
     const [caratteristiche, setCaratteristiche] = useState();
-
+ 
     useEffect(
     () => {
         if (product && product.categories)
@@ -42,11 +44,24 @@ function Caratteristiche({product}){
 export default function Prodotto() {   
     const[product, setProduct] = useState();
     const {shop, setShop} = useContext(CarrelloContext);
+    const{totale, setTotale} = useContext(TotaleContext);
 
-    function AddCarrello(){
-        setShop([...shop, product]);
+    function Totale(){
+        let prezzo="";
+        setTotale(0)
+        shop.forEach(x => {
+            prezzo=x.price.substring(1,x.price.length);
+            setTotale(parseFloat(totale)+parseFloat(prezzo));
+        });
     }
-    console.log(shop);
+    function AddCarrello(){
+        setShop([...shop, product])
+    }
+
+    useEffect(() => {
+        Totale()
+        console.log(shop)
+    }, [shop])
     let { id } = useParams();
 
     axios.get("http://localhost:5000/products/" + id).then((response) => {
@@ -77,8 +92,7 @@ export default function Prodotto() {
 
                     <Caratteristiche product={product}/>
                 </div>
-                
-                <button className="agg-prodotto-scelto" onClick={()=>{ AddCarrello();}}>AGGIUNGI AL CARRELLO</button>
+                <button className="agg-prodotto-scelto" onClick={()=>{AddCarrello();}}>AGGIUNGI AL CARRELLO</button>
             </div>
         </div>
       </div>  

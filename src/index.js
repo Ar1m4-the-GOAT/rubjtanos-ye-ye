@@ -23,6 +23,7 @@ import {
 import MainLayout from './layouts/MainLayout';
 import Prodotto from './Pages/Prodotto';
 import {CarrelloProvider} from './components/CarrelloContext'
+import {TotaleProvider} from './components/TotaleContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -71,9 +72,11 @@ const router = createBrowserRouter([
 ]);
 root.render(
   // <React.StrictMode>
+  <TotaleProvider>
     <CarrelloProvider>
       <RouterProvider router={router} />
     </CarrelloProvider>
+  </TotaleProvider>
   // </React.StrictMode>
 );
 

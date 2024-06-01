@@ -16,6 +16,5 @@ export default function MainLayout(){
 
 function clickHandler(event) {
     // if (event.target !== "div.option-bar-button" && event.target !== "div.element-menu") CloseCategories();
-    // if(event.target.id !== "menu") CloseCategories();
-    console.log(event);
+    if(!["menu", "option-bar-button", "icon", "element-menu"].includes(event.target.id)) CloseCategories()
 }
